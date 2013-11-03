@@ -1,0 +1,11 @@
+﻿<fieldset>
+    <legend>Create List</legend>
+    <button data-bind="click: logout" id="logout">Logout</button>
+    <span data-bind="text: user" id="user"></span>
+    <label for="tb-title">Title: </label>
+    <input data-bind="value: title" type="text" id="tb-title" /><br />
+    <label for="tb-todo">Todo: </label>
+    <input data-bind="value: todo" type="text" id="tb-todo" />
+    <button data-bind="click: createTodo">CreateTodo</button><br />
+    <button data-bind="click: createList">CreateList</button>
+</fieldset>

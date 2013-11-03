@@ -1,0 +1,20 @@
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Data.dll.config
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Data.dll
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Data.pdb
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Models.dll
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Models.pdb
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\obj\Debug\TasksManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\obj\Debug\TasksManager.Data.dll
+C:\Users\Fili\Desktop\TasksManager\TasksManager.Data\obj\Debug\TasksManager.Data.pdb
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Data.dll.config
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Data.dll
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Data.pdb
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Models.dll
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\bin\Debug\TasksManager.Models.pdb
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\obj\Debug\TasksManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\obj\Debug\TasksManager.Data.dll
+C:\Users\USER\Desktop\Telerik Academy\JS Frameworks\Lectures\12. Exam\TasksManager\TasksManager.Data\obj\Debug\TasksManager.Data.pdb

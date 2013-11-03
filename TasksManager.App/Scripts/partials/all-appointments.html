@@ -1,0 +1,25 @@
+﻿<h2>Your all appointments</h2>
+<div>
+    <button data-bind="click: logout" id="logout">Logout</button>
+    <span data-bind="text: user" id="user"></span>
+    <ul data-template="all-appointments-template" data-bind="source: appointments"></ul>
+    <button data-bind="click: comming">Comming Appointments</button>
+    <button data-bind="click: today">Today Appointments</button>
+    <button data-bind="click: current">Current Appointments</button><br />
+    <label for="tb-date">Date: </label>
+    <input data-bind="value: date" type="text" id="tb-date" />
+    <button data-bind="click: byDate">Appointments by Date</button><br />
+    <button data-bind="click: create">Create Appointment</button>    
+    <button data-bind="click: createList">Create List</button>
+    <button data-bind="click: viewLists">View Lists</button>
+</div>
+<script type="text/x-kendo-template" id="all-appointments-template">
+    <li>
+        <strong>Subject: </strong><span>#: subject #</span><br />
+        <strong>Description: </strong><span>#: description #</span><br />
+        <strong>Appointment Date: </strong><span>#: appointmentDate #</span><br />
+        <strong>CreationDate: </strong><span>#: createdAt #</span><br />
+        <strong>Duration: </strong><span>#: duration #</span><br />
+        <strong>State: </strong><span>#: state #</span><br />
+    </li>
+</script>

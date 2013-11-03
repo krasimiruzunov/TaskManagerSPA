@@ -1,0 +1,14 @@
+﻿<fieldset>
+    <button data-bind="click: logout" id="logout">Logout</button>
+    <span data-bind="text: user" id="user"></span>
+    <legend>Create Appointment</legend>
+    <label for="tb-subject">Subject</label>
+    <input data-bind="value: subject" type="text" id="tb-subject" /><br />
+    <label for="tb-description">Description</label>
+    <input data-bind="value: description" type="text" id="tb-description" /><br />
+    <label for="tb-appointmentDate">Appointment Date</label>
+    <input data-bind="value: appointmentDate" type="text" id="tb-appointmentDate" /><br />
+    <label for="tb-duration">Duration</label>
+    <input data-bind="value: duration" type="text" id="duration" /><br />
+    <button data-bind="click: create">Create</button>
+</fieldset>
