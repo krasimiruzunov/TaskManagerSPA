@@ -6,9 +6,9 @@ window.vmFactory = (function () {
 
     function getLoginViewModel(successCallback) {		
         var viewModel = {
-            username: "TestUser",
-            email: "user@gmail.com",
-            password: "123456q",
+            username: "",
+            email: "",
+            password: "",
             login: function () {
                 data.users.login(this.get("username"), this.get("email"), this.get("password"))
 					.then(function () {
@@ -33,7 +33,7 @@ window.vmFactory = (function () {
         var viewModel = {
             subject: "Subject",
             description: "Description",
-            appointmentDate: "03-09-2013",
+            appointmentDate: new Date().getDate() + "." + (new Date().getMonth() + 1) + "." + new Date().getFullYear(),
             duration: "150",
             user: data.users.currentUser(),
             create: function () {
@@ -61,7 +61,7 @@ window.vmFactory = (function () {
 			    var viewModel = {
 			        appointments: receivedData,
 			        message: "",
-			        date: "03-09-2013",
+			        date:  new Date().getDate() + "." + (new Date().getMonth() + 1)  + "." + new Date().getFullYear(),
 			        user: data.users.currentUser(),
 			        logout: function () {
 			            data.users.logout();
@@ -108,7 +108,11 @@ window.vmFactory = (function () {
 			.then(function (receivedData) {
 			    var viewModel = {
 			        appointments: receivedData,
-			        message: ""
+			        message: "",
+			        allAppointments: function () {
+			            var router = new application.router();
+			            router.navigate("/appointments/all");
+                    }
 			    };
 			    return kendo.observable(viewModel);
 			});
@@ -119,7 +123,11 @@ window.vmFactory = (function () {
 			.then(function (receivedData) {
 			    var viewModel = {
 			        appointments: receivedData,
-			        message: ""
+			        message: "",
+			        allAppointments: function () {
+			            var router = new application.router();
+			            router.navigate("/appointments/all");
+			        }
 			    };
 			    return kendo.observable(viewModel);
 			});
@@ -130,7 +138,11 @@ window.vmFactory = (function () {
 			.then(function (receivedData) {
 			    var viewModel = {
 			        appointments: receivedData,
-			        message: ""
+			        message: "",
+			        allAppointments: function () {
+			            var router = new application.router();
+			            router.navigate("/appointments/all");
+			        }
 			    };
 			    return kendo.observable(viewModel);
 			});
@@ -141,7 +153,11 @@ window.vmFactory = (function () {
 			.then(function (receivedData) {
 			    var viewModel = {
 			        appointments: receivedData,
-			        message: ""
+			        message: "",
+			        allAppointments: function () {
+			            var router = new application.router();
+			            router.navigate("/appointments/all");
+			        }
 			    };
 			    return kendo.observable(viewModel);
 			});
@@ -149,10 +165,14 @@ window.vmFactory = (function () {
 
     function getCreateListViewModel(successCallback) {
         var viewModel = {
-            title: "list title",
+            title: "",
             todo: "todo",
             todos: [],
             user: data.users.currentUser(),
+            allAppointments: function () {
+                var router = new application.router();
+                router.navigate("/appointments/all");
+            },
             createList: function () {
                 data.lists.create(this.get("title"), this.get("todos"))
 					.then(function () {
@@ -163,13 +183,13 @@ window.vmFactory = (function () {
             },
             createTodo: function () {
                 this.get("todos").push(this.get("todo"));
+                console.log(this.get("todos"));
             },
             logout: function () {
             data.users.logout();
             var router = application.router();
             router.navigate("/");
-        }
-
+            }
         };
         
         return kendo.observable(viewModel);
@@ -195,16 +215,41 @@ window.vmFactory = (function () {
 			        isDone: false,
 			        update: function (ev) {
 			            var router = application.router();
-			            router.navigate("/todos/" + $(this).parents("li").first().data("id"));
+			            var todoId = ev.data.id;
+			            router.navigate("/todos/" + todoId);
 			        },
+			        allAppointments: function () {
+			            var router = application.router();
+			            router.navigate("/appointments/all");
+			        },
+			        addTodo: function () {
+			            var router = application.router();
+			            var listId = receivedData.id;
+			            router.navigate("/lists/"+ listId +"/todos/create");
+			        }
 			    };
 			    return kendo.observable(viewModel);
 			});
     };
 
+    function getChangeTodoStatusViewModel(todoId, successCallback) {
+        var viewModel = {
+            updateStatus: function () {
+                data.todos.changeStatus(todoId)
+					.then(function () {
+					    if (successCallback) {
+					        successCallback();
+					    }
+					});
+            }
+        };
+
+        return kendo.observable(viewModel);
+    };
+
     function getCreateTodoViewModel(listId, successCallback) {
         var viewModel = {
-            text: "text",
+            text: "",
             user: data.users.currentUser(),
             createTodo: function () {
                 data.lists.createToListWithId(listId, this.get("text"))
@@ -236,6 +281,7 @@ window.vmFactory = (function () {
         getCreateListVM: getCreateListViewModel,
         getAllListsVM: getAllListsViewModel,
         getSingleListVM: getSingleListViewModel,
+        getChangeTodoStatusVM: getChangeTodoStatusViewModel,
         getCreateTodoVM: getCreateTodoViewModel,
         setPersister: function (persister) {
             data = persister

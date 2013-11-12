@@ -79,7 +79,7 @@ window.persisters = (function () {
         },
         create: function (subject, description,
             appointmentDate, duration) {
-            if (!sessionKey) {
+            if (!localStorage.getItem("username")) {
                 console.log("Log in to create new appointment!");
                 var router = application.router();
                 router.navigate("/auth/token");
@@ -98,7 +98,7 @@ window.persisters = (function () {
             }
         },
         all: function () {
-            if (!sessionKey) {
+            if (!localStorage.getItem("username")) {
                 console.log("Log in to view all appointments!");
                 var router = application.router();
                 router.navigate("/auth/token");
@@ -172,11 +172,11 @@ window.persisters = (function () {
                 var headers = {
                     "X-accessToken": sessionKey
                 };
-                var todo = {
+                var list = {
                     title: title,
                     todos: todos
                 }
-                return httpRequester.postJSON(this.apiUrl + "lists", todo, headers);
+                return httpRequester.postJSON(this.apiUrl + "lists/new", list, headers);
             }
         },
         all: function(){
@@ -215,7 +215,7 @@ window.persisters = (function () {
                 var todo = {
                     text: text
                 };
-                console.log(todo);
+
                 return httpRequester.postJSON(this.apiUrl + "lists/" + listId + "/todos" , todo, headers);
             }
         }

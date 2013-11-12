@@ -1,8 +1,11 @@
 ﻿<h2>Today appointments</h2>
-<ul data-template="all-appointments-template" data-bind="source: appointments"></ul>
 
+<ul data-template="all-appointments-template" data-bind="source: appointments"></ul>
+<div>
+    <button data-bind="click: allAppointments">Back</button>
+</div>
 <script type="text/x-kendo-template" id="all-appointments-template">
-    <li>
+    <li class="span">
         <strong>Subject: </strong><span>#: subject #</span><br />
         <strong>Description: </strong><span>#: description #</span><br />
         <strong>Appointment Date: </strong><span>#: appointmentDate #</span><br />

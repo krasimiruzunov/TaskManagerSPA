@@ -65,6 +65,10 @@
         return getTemplate("single-list");
     }
 
+    function getChangeTodoStatusView() {
+        return getTemplate("change-todo.status");
+    }
+
     function getCreateTodoView() {
         return getTemplate("create-todo");
     }
@@ -80,6 +84,7 @@
         getCreateListView: getCreateListView,
         getAllListsView: getAllListsView,
         getSingleListView: getSingleListView,
+        getChangeTodoStatusView: getChangeTodoStatusView,
         getCreateTodoView: getCreateTodoView
     };
 }());

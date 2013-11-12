@@ -1,11 +1,11 @@
 ﻿<fieldset>
     <legend>Login or register</legend>
     <label for="tb-username">Username</label>
-    <input data-bind="value: username" type="text" id="tb-username" />
+    <input data-bind="value: username" type="text" id="tb-username" placeholder="Username"/>
     <label for="tb-email">E-mail</label>
-    <input data-bind="value: email" type="text" id="tb-emial" />
+    <input data-bind="value: email" type="email" id="tb-emial" placeholder="example@gmail.com" />
     <label for="tb-password">Password</label>
-    <input data-bind="value: password" type="text" id="tb-password" />
+    <input data-bind="value: password" type="password" id="tb-password" />
     <button data-bind="click: login">Login</button>
     <button data-bind="click: register">Register</button>
 </fieldset>

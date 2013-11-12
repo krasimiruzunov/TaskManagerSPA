@@ -65,7 +65,8 @@ namespace TasksManager.App.Controllers
         {
             return this.ExecuteOperationAndHandleExceptions(() =>
             {
-                //this.ValidateUser(model);
+                this.ValidateUser(model);
+                
                 if (model == null)
                 {
                     throw new FormatException("invalid username and/or password");

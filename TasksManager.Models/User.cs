@@ -17,7 +17,5 @@ namespace TasksManager.Models
 
         public virtual ICollection<Appointment> Appointments { get; set; }
         public virtual ICollection<TodoList> TodoLists { get; set; }
-
     }
-
 }

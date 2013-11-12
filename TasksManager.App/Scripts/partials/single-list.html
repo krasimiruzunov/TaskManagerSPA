@@ -1,20 +1,23 @@
 ﻿<h2>List</h2>
 <ul data-template="all-lists-template" data-bind="source: list"></ul>
+<button data-bind="click: allAppointments">All Appointments</button>
+<button data-bind="click: addTodo">Add todo</button>
 
 <script type="text/x-kendo-template" id="all-lists-template">
     <li>
         <strong>Title: </strong><span>#: title #</span><br />
-        <div>Todos:
-            <ul data-template="todos-template" data-bind="source: todos"></ul>
+        <div><strong>Todos:</strong>
+            <ul data-template="todos-template" data-bind="source: todos" id="todos"></ul>
         </div>
     </li>
 </script>
 
 <script type="text/x-kendo-template" id="todos-template">
-    <li data-id=#: id #>
-        <strong>Text: </strong><span>#: text #</span><br />
-        <strong>IsDone: </strong><span>#: isDone #</span>
-        <input type="checkbox" data-bind="checked: isDone" />
-        <button data-bind="click: update">Update status</button>
-    </li>
+
+        <li data-id="#: id #">
+            <strong>Text: </strong><span>#: text #</span>, 
+            <strong>IsDone: </strong><span>#: isDone #</span>
+            <button id="#: id #" data-bind="click: update">Change status</button>
+        </li>
+
 </script>

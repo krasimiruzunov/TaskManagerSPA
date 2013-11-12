@@ -74,7 +74,7 @@ var application = (function () {
         if (data.users.currentUser()) {
             viewsFactory.getCreateAppointmentView()
             .then(function (createAppointmentView) {
-                var CreateAppointmentVM = vmFactory.getCreateAppointmentVM();
+                var CreateAppointmentVM = vmFactory.getCreateAppointmentVM(function () { router.navigate("/appointments/all"); });
                 var view = new kendo.View(createAppointmentView,
                     { model: CreateAppointmentVM });
                 appLayout.showIn("#main-content", view);
@@ -259,7 +259,7 @@ var application = (function () {
         if (data.users.currentUser()) {
             viewsFactory.getCreateListView()
             .then(function (createListView) {
-                var createListVM = vmFactory.getCreateListVM();
+                var createListVM = vmFactory.getCreateListVM(function () { router.navigate("/lists/all"); });
                 var view = new kendo.View(createListView,
                         { model: createListVM });
                     appLayout.showIn("#main-content", view);
@@ -350,7 +350,7 @@ var application = (function () {
         if (data.users.currentUser()) {
             viewsFactory.getCreateTodoView()
             .then(function (createTodoView) {
-                var CreateTodoVM = vmFactory.getCreateTodoVM(id);
+                var CreateTodoVM = vmFactory.getCreateTodoVM(id, function () { router.navigate("/lists/" + id); });
                 var view = new kendo.View(createTodoView,
                     { model: CreateTodoVM });
                 appLayout.showIn("#main-content", view);
@@ -377,7 +377,15 @@ var application = (function () {
 
     router.route("/todos/:id", function (id) {
         if (data.users.currentUser()) {
-            data.todos.changeStatus(id);
+            viewsFactory.getChangeTodoStatusView()
+            .then(function (changeTodoStatusView) {
+                var ChangeTodoStatusVM = vmFactory.getChangeTodoStatusVM(id, function () { router.navigate("/lists/all"); });
+                var view = new kendo.View(changeTodoStatusView,
+                    { model: ChangeTodoStatusVM });
+                appLayout.showIn("#main-content", view);
+            }, function (err) {
+                console.log(err);
+            });
         }
         else {
             router.navigate("/login");

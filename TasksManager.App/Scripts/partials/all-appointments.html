@@ -1,20 +1,26 @@
 ﻿<h2>Your all appointments</h2>
-<div>
+<div class="clearfix">
     <button data-bind="click: logout" id="logout">Logout</button>
     <span data-bind="text: user" id="user"></span>
-    <ul data-template="all-appointments-template" data-bind="source: appointments"></ul>
-    <button data-bind="click: comming">Comming Appointments</button>
-    <button data-bind="click: today">Today Appointments</button>
-    <button data-bind="click: current">Current Appointments</button><br />
-    <label for="tb-date">Date: </label>
-    <input data-bind="value: date" type="text" id="tb-date" />
-    <button data-bind="click: byDate">Appointments by Date</button><br />
-    <button data-bind="click: create">Create Appointment</button>    
-    <button data-bind="click: createList">Create List</button>
-    <button data-bind="click: viewLists">View Lists</button>
 </div>
+<div class="menu">
+    <ul>
+        <li><button data-bind="click: create">Create Appointment</button></li>
+        <li><button data-bind="click: comming">Comming Appointments</button></li>
+        <li><button data-bind="click: today">Today Appointments</button></li>
+        <li><button data-bind="click: current">Current Appointments</button></li>
+        <li><label for="tb-date">Date:</label><input data-bind="value: date" type="text" id="tb-date" /></li>
+        <li><button data-bind="click: byDate">Appointments by Date</button></li>
+        <li><button data-bind="click: createList">Create List</button></li>
+        <li><button data-bind="click: viewLists">View Lists</button></li>
+    </ul>
+</div>
+<div class="main">
+    <ul data-template="all-appointments-template" data-bind="source: appointments"></ul>
+</div>
+
 <script type="text/x-kendo-template" id="all-appointments-template">
-    <li>
+    <li class="span">
         <strong>Subject: </strong><span>#: subject #</span><br />
         <strong>Description: </strong><span>#: description #</span><br />
         <strong>Appointment Date: </strong><span>#: appointmentDate #</span><br />

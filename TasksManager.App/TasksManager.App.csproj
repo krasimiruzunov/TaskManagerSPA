@@ -123,6 +123,7 @@
     <Content Include="Scripts\libs\rsvp.min.js" />
     <Content Include="Scripts\partials\all-appointments.html" />
     <Content Include="Scripts\partials\all-lists.html" />
+    <Content Include="Scripts\partials\change-todo.status.html" />
     <Content Include="Scripts\partials\comming-appointments.html" />
     <Content Include="Scripts\partials\create-appointment.html" />
     <Content Include="Scripts\partials\create-list.html" />
@@ -133,7 +134,10 @@
     <Content Include="Scripts\partials\single-list.html" />
     <Content Include="Scripts\partials\today-appointments.html" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="styles.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
